@@ -3,13 +3,13 @@ import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-export const Planetsprofile = props => {
+export const Peoplesprofile = props => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
 	let dato = [];
 
 	useEffect(() => {
-		actions.getInfPlanets(params.theid);
+		actions.getInfPeoples(params.theid);
 	}, []);
 
 	console.log(store.detalle);
@@ -29,6 +29,6 @@ export const Planetsprofile = props => {
 	);
 };
 
-Planetsprofile.propTypes = {
+Peoplesprofile.propTypes = {
 	match: PropTypes.object
 };

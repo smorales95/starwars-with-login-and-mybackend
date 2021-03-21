@@ -6,6 +6,7 @@ import { Home } from "./views/home";
 import { Demo } from "./views/demo";
 import { Single } from "./views/single";
 import { Planetsprofile } from "./views/planetsprofile";
+import { Peoplesprofile } from "./views/peoplesprofile";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -34,6 +35,9 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/planetsprofile/:theid">
 							<Planetsprofile />
+						</Route>
+						<Route exact path="/peoplesprofile/:theid">
+							<Peoplesprofile />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>

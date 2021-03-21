@@ -10,6 +10,7 @@ export const Home = () => {
 
 	useEffect(() => {
 		actions.getPlanets();
+		actions.getPeoples();
 	}, []);
 
 	return (
@@ -17,18 +18,28 @@ export const Home = () => {
 			<div className="scrollmenu">
 				<div className="row text-center">
 					<div className="col" style={{ margin: "3rem 1rem 1rem 1rem" }}>
-						<Card />
+						{store.peoples.map((items, i) => {
+							return (
+								<div key={i} style={{ marginRight: "10px" }}>
+									<Card title={items.name} url={items.url} uid={items.uid} />
+								</div>
+							);
+						})}
 					</div>
 				</div>
 			</div>
-			<div className="scrollmenu" style={{ marginTop: "70px" }}>
+			<div className="scrollmenu" style={{ marginTop: "40px" }}>
 				<div className="row text-center">
-					<div className="col" style={{ margin: "3rem 1rem" }}>
+					<div className="col" style={{ margin: "3rem 1rem 1rem 1rem" }}>
 						{store.planets.map((items, i) => {
 							return (
-								<div key={i}>
-									<PlanetsCard UrlImage={items.UrlImage} name={items.name} terrain={items.terrain} />
-									{console.log(items)}
+								<div key={i} style={{ marginRight: "10px" }}>
+									<PlanetsCard
+										UrlImage={items.UrlImage}
+										name={items.name}
+										terrain={items.terrain}
+										uid={items.uid}
+									/>
 								</div>
 							);
 						})}

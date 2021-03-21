@@ -8,12 +8,15 @@ export const PlanetsCard = props => {
 
 	return (
 		<div>
-			<div className="card " style={{ width: "26rem", height: "25rem" }}>
-				<img className="card-img-top" src={rigoImage} alt="Card image cap" height="150" />
+			<div className="card " style={{ width: "20rem", height: "20rem" }}>
+				<img className="card-img-top" src={rigoImage} alt="Card image cap" height="125" />
 				<div className="card-body">
 					<h5 className="card-title">{props.name}</h5>
-					<p className="card-text">{props.terrain}</p>
-					<Link to={"/planetsprofile/" + 1}>
+					<p className="card-text margen">
+						Terran:
+						{props.terrain}
+					</p>
+					<Link to={"/planetsprofile/" + props.uid}>
 						<button className="btn btn-primary">Back home</button>
 					</Link>
 				</div>
