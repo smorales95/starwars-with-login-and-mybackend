@@ -12,10 +12,22 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			]
+			],
+			planets: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
+
+			getPlanets: async () => {
+				const store = getStore();
+				fetch("https://www.swapi.tech/api/planets/")
+					.then(response => response.json())
+					.then(data => {
+						setStore({ planets: data.results });
+					})
+					.catch(error => console.log("error", error));
+			},
+
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
