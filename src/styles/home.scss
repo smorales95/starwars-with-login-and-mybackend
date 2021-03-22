@@ -23,5 +23,55 @@ div.scrollmenu div {
     text-align: left;
 }
 
+.pos1{
+    float: left !important;
+}
+
+.pos2{
+    float: right !important;
+}
+
+.pos3{
+    margin: 2px;
+}
 
 
+.asize{
+    font-size: 18px !important;
+    color:red;
+    
+}
+
+.jumbotron p{
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.jumbotron h1{
+    
+    font-family: cursive;
+    font: bold;
+     border-bottom: 5px solid rgb(101, 103, 248);
+    
+
+}
+
+.top1{
+    
+    margin-top:35px;
+    margin-bottom: auto;
+    background-color: white;
+}
+
+body{
+    background-color: black;
+}
+
+.navbar{
+background-color: rgb(121, 104, 9);
+}
+
+.scro{
+    margin-top: 25px !important;
+    margin-bottom: 25px !important;
+}

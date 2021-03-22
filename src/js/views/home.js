@@ -11,6 +11,7 @@ export const Home = () => {
 	useEffect(() => {
 		actions.getPlanets();
 		actions.getPeoples();
+		actions.Favorite();
 	}, []);
 
 	return (
@@ -19,16 +20,22 @@ export const Home = () => {
 				<div className="row text-center">
 					<div className="col" style={{ margin: "3rem 1rem 1rem 1rem" }}>
 						{store.peoples.map((items, i) => {
+							//  actions.getInfP(items.uid);
 							return (
 								<div key={i} style={{ marginRight: "10px" }}>
-									<Card title={items.name} url={items.url} uid={items.uid} />
+									<Card
+										title={items.name}
+										url={items.url}
+										uid={items.uid}
+										//	gender={store.inf.gender}
+									/>
 								</div>
 							);
 						})}
 					</div>
 				</div>
 			</div>
-			<div className="scrollmenu" style={{ marginTop: "40px" }}>
+			<div className="scrollmenu scro">
 				<div className="row text-center">
 					<div className="col" style={{ margin: "3rem 1rem 1rem 1rem" }}>
 						{store.planets.map((items, i) => {

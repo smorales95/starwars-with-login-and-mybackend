@@ -8,7 +8,10 @@ export const PlanetsCard = props => {
 
 	return (
 		<div>
-			<div className="card " style={{ width: "20rem", height: "20rem" }}>
+			<div
+				className="card "
+				style={{ color: "white", width: "20rem", height: "20rem", backgroundColor: "rgb(121, 104, 9)" }}>
+				{" "}
 				<img className="card-img-top" src={rigoImage} alt="Card image cap" height="125" />
 				<div className="card-body">
 					<h5 className="card-title">{props.name}</h5>

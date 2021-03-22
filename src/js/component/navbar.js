@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../../styles/home.scss";
 
 export const Navbar = () => {
 	return (
-		<nav className="navbar navbar-light bg-light">
+		<nav className="navbar">
 			<div className="container-fluid">
 				<Link to="/">
 					<a className="navbar-brand" href="/">
@@ -19,13 +20,14 @@ export const Navbar = () => {
 
 				<div className="dropdown">
 					<button
+						style={{ color: "rgb(121, 104, 9)", backgroundColor: "white" }}
 						className="btn btn-primary dropdown-toggle"
 						type="button"
 						id="dropdownMenuButton"
 						data-toggle="dropdown"
 						aria-haspopup="true"
 						aria-expanded="false">
-						Favoritos
+						Favoritos <i className="fas fa-eye" />
 					</button>
 					<div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
 						<a className="dropdown-item" href="#">
