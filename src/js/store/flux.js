@@ -5,7 +5,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			peoples: [],
 			detalle: [],
 			inf: [],
-			favoritos: [{ uid: "1", name: "Luke Skywalker", url: "https://www.swapi.tech/api/people/1" }]
+			favoritos: [{ uid: "1", name: "Luke Skywalker", url: "https://www.swapi.tech/api/people/1" }],
+			people1: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -25,8 +26,21 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(response => response.json())
 					.then(data => {
 						setStore({ peoples: data.results });
+						//	getInfPeoples1(data.results.uid);
 					})
 
+					.catch(error => console.log("error", error));
+			},
+
+			getInfPeoples1: async id => {
+				const store = getStore();
+
+				fetch("https://www.swapi.tech/api/people/" + id)
+					.then(response => response.json())
+					.then(data => {
+						setStore({ people1: people1 + data.result.properties });
+						//setStore({ favoritos: data.result.properties });
+					})
 					.catch(error => console.log("error", error));
 			},
 

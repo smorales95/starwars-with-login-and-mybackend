@@ -16,17 +16,21 @@ export const Home = () => {
 
 	return (
 		<div className="container-fluid ">
-			<div className="scrollmenu">
+			<h1 className="pers">Personajes</h1>
+			<div className="scrollmenu scro1">
 				<div className="row text-center">
 					<div className="col" style={{ margin: "3rem 1rem 1rem 1rem" }}>
 						{store.peoples.map((items, i) => {
-							//  actions.getInfP(items.uid);
+							//actions.getInfPeoples1(items.uid);
 							return (
 								<div key={i} style={{ marginRight: "10px" }}>
 									<Card
 										title={items.name}
 										url={items.url}
 										uid={items.uid}
+										//gender={store.people1.gender}
+										//hair={store.people1.hair_color}
+										//eye={store.people1.eye_color}
 										//	gender={store.inf.gender}
 									/>
 								</div>
@@ -35,6 +39,7 @@ export const Home = () => {
 					</div>
 				</div>
 			</div>
+			<h1 className="plane">Planetas</h1>
 			<div className="scrollmenu scro">
 				<div className="row text-center">
 					<div className="col" style={{ margin: "3rem 1rem 1rem 1rem" }}>

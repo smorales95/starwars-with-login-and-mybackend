@@ -38,7 +38,7 @@ div.scrollmenu div {
 
 .asize{
     font-size: 18px !important;
-    color:red;
+    color:rgb(121, 104, 9);
     
 }
 
@@ -51,7 +51,7 @@ div.scrollmenu div {
     
     font-family: cursive;
     font: bold;
-     border-bottom: 5px solid rgb(101, 103, 248);
+     border-bottom: 5px solid rgb(121, 104, 9);
     
 
 }
@@ -72,6 +72,26 @@ background-color: rgb(121, 104, 9);
 }
 
 .scro{
-    margin-top: 25px !important;
+   
     margin-bottom: 25px !important;
+}
+
+.scro1{
+    margin-top: -25px !important;
+    margin-bottom: 25px !important;
+}
+.pers{
+margin-top: 20px;
+color: White;
+margin-bottom: 10px !important;
+font-family: cursive;
+    font: bold;
+}
+
+.plane{
+    margin-top: 50px !important;
+    color: White;
+    margin-bottom: -10px !important;
+    font-family: cursive;
+    font: bold;
 }

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
-import rigoImage from "../../img/rigo-baby.jpg";
+import rigoImage from "../../img/person.jpg";
 import "../../styles/home.scss";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
@@ -19,14 +19,18 @@ export const Card = props => {
 						Gender:
 						{props.gender}
 						<br />
-						Hair color: {props.url}
+						Hair color:
 						<br />
 						Hair color: {props.eye}
 						<br />
 					</p>
 
 					<Link to={"/peoplesprofile/" + props.uid}>
-						<button className="btn btn-primary pos1">Learn More</button>
+						<button
+							className="btn btn-primary pos1"
+							style={{ color: "rgb(121, 104, 9)", backgroundColor: "white", border: "none" }}>
+							Learn More
+						</button>
 					</Link>
 
 					<i

@@ -42,7 +42,9 @@ export const Peoplesprofile = props => {
 						</p>
 					</div>
 				</div>
-				<div className="row text-justify" style={{ marginTop: "20px", borderTop: "2px solid red" }}>
+				<div
+					className="row text-justify"
+					style={{ marginTop: "20px", borderTop: "2px solid rgb(121, 104, 9)" }}>
 					<div className="col-2">
 						<p className="asize">
 							Name:
@@ -89,7 +91,11 @@ export const Peoplesprofile = props => {
 
 				<div className="row">
 					<Link to="/">
-						<span className="btn btn-primary btn-lg" href="#" role="button">
+						<span
+							className="btn btn-primary btn-lg pos1"
+							style={{ color: "white", backgroundColor: "rgb(121, 104, 9)", border: "none" }}
+							href="#"
+							role="button">
 							Back home
 						</span>
 					</Link>
