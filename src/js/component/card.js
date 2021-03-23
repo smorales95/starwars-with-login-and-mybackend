@@ -33,10 +33,12 @@ export const Card = props => {
 						</button>
 					</Link>
 
-					<i
-						className="fa fa-heart pos2"
-						onClick={() => actions.Favorite(props.uid, props.title, props.url)}
-					/>
+					<div className="pos2">
+						<i
+							className="fa fa-heart"
+							onClick={() => actions.Favorite(props.uid, props.title, props.url)}
+						/>
+					</div>
 				</div>
 			</div>
 		</div>

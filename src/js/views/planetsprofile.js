@@ -20,10 +20,10 @@ export const Planetsprofile = props => {
 			<div className="jumbotron top1">
 				<div className="row">
 					<div className="col-3">
-						<img src={rigoImage} className="" alt="Responsive image" width="290px" height="260px" />
+						<img src={rigoImage} className="" alt="Responsive image" width="290px" height="230px" />
 					</div>
 					<div className="col">
-						<h1 className="display-4">Nombre: {store.detalle.name}</h1>
+						<h1 className="display-4">Planeta: {store.detalle.name}</h1>
 
 						<p style={{ textAlign: "justify" }}>
 							Star Wars (conocida también en español como La guerra de las galaxias)​ es una franquicia

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
-import rigoImage from "../../img/BeruWhitesunlars.jpg";
+import rigoImage from "../../img/perscard.jpg";
 
 export const Peoplesprofile = props => {
 	const { store, actions } = useContext(Context);
@@ -29,10 +29,10 @@ export const Peoplesprofile = props => {
 			<div className="jumbotron top1">
 				<div className="row">
 					<div className="col-3">
-						<img src={rigoImage} className="" alt="Responsive image" />
+						<img src={rigoImage} className="" alt="Responsive image" width="290px" height="230px" />
 					</div>
 					<div className="col">
-						<h1 className="display-4">Nombre: {store.detalle.name}</h1>
+						<h1 className="display-4">Personaje: {store.detalle.name}</h1>
 
 						<p style={{ textAlign: "justify" }}>
 							Star Wars (conocida también en español como La guerra de las galaxias)​ es una franquicia

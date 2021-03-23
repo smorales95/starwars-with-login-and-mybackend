@@ -18,8 +18,13 @@ export const PlanetsCard = props => {
 				<div className="card-body">
 					<h5 className="card-title">{props.name}</h5>
 					<p className="card-text margen">
+						Population:
+						{props.terrain}
+						<br />
 						Terran:
 						{props.terrain}
+						<br />
+						<br />
 					</p>
 					<Link to={"/planetsprofile/" + props.uid}>
 						<button
@@ -28,10 +33,9 @@ export const PlanetsCard = props => {
 							Learn More
 						</button>
 					</Link>
-					<i
-						className="fa fa-heart pos2"
-						onClick={() => actions.Favorite(props.uid, props.name, props.url)}
-					/>
+					<div className="pos2">
+						<i className="fa fa-heart" onClick={() => actions.Favorite(props.uid, props.name, props.url)} />
+					</div>
 				</div>
 			</div>
 		</div>
