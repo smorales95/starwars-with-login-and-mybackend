@@ -12,7 +12,7 @@ export const Card = props => {
 		<div>
 			<div
 				className="card "
-				style={{ color: "white", width: "20rem", height: "20rem", backgroundColor: "rgb(121, 104, 9)" }}>
+				style={{ color: "white", width: "15rem", height: "20rem", backgroundColor: "rgb(121, 104, 9)" }}>
 				<img className="card-img-top" src={rigoImage} alt="Card image cap" height="125" />
 				<div className="card-body">
 					<h5 className="card-title">{props.title}</h5>
