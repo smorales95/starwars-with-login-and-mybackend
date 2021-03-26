@@ -46,7 +46,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				} else {
 					setStore({ favoritos: [...store.favoritos, { id: id, name: name, url: url }] });
 				}
-				console.log(store.favoritos);
+				//console.log(store.favoritos);
 			},
 
 			//Funcion para eliminar los favoritos en el nvbar

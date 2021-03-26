@@ -7,7 +7,6 @@ import rigoImage from "../../img/perscard.jpg";
 export const Peoplesprofile = props => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
-	let dato = [];
 
 	//console.log(store.detalle);
 	//let peg = store.detalle.name;

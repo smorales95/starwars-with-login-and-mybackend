@@ -7,9 +7,6 @@ import rigoImage from "../../img/plane.png";
 export const Planetsprofile = props => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
-	let dato = [];
-
-	console.log(store.detalle);
 
 	return (
 		<div className="container-fluid">
