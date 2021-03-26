@@ -8,14 +8,6 @@ export const Peoplesprofile = props => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
 
-	//console.log(store.detalle);
-	//let peg = store.detalle.name;
-	//let patron = / /g,
-	//	nuevoValor = "";
-
-	//	let nuevaCadena = peg.replace(patron, "");
-	//	console.log(nuevaCadena);
-
 	return (
 		<div className="container-fluid">
 			{store.peoples.map((items, i) => {
