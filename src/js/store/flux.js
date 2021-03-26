@@ -1,13 +1,12 @@
+import { element } from "prop-types";
+
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			planets: [],
 			peoples: [],
-			detalle: [],
-
-			inf: [],
-			favoritos: [],
-			people1: []
+			favoritos: []
+			//detalle: [],
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -33,7 +32,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.catch(error => console.log("error", error));
 			},
 
-			getInfPeoples: async id => {
+			/*getInfPeoples: async id => {
 				const store = getStore();
 
 				fetch("https://www.swapi.tech/api/people/" + id)
@@ -58,11 +57,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 						//setStore({ favoritos: data.result.properties });
 					})
 					.catch(error => console.log("error", error));
-			},
+			},*/
 
 			Favorite: (id, name, url) => {
 				const store = getStore();
-				let demo;
 
 				if (store.favoritos.length <= 0) {
 					setStore({ favoritos: [{ id: id, name: name, url: url }] });
@@ -70,6 +68,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 					setStore({ favoritos: [...store.favoritos, { id: id, name: name, url: url }] });
 				}
 				console.log(store.favoritos);
+			},
+
+			Delete: i => {
+				//get the store
+				const store = getStore();
+				store.favoritos.splice(i, 1);
+				//we have to loop the entire demo array to look for the respective index
+				//and change its color
+
+				setStore({ favoritos: store.favoritos });
 			},
 
 			exampleFunction: () => {

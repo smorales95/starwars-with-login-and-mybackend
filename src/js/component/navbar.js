@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/home.scss";
-import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from "reactstrap";
-import "bootstrap/dist/css/bootstrap.css";
-import rigoImage from "../../img/starr.jpg";
+//import "bootstrap/dist/css/bootstrap.min.css";
+import DropdownButton from "react-bootstrap/DropdownButton";
+import Dropdown from "react-bootstrap/Dropdown";
+import { propTypes } from "react-bootstrap/esm/Image";
+import { Card } from "./card";
+import { Context } from "../store/appContext";
 
-export const Navbar = () => {
+export const Navbar = props => {
+	const { store, actions } = useContext(Context);
 	return (
 		<nav className="navbar">
 			<div className="container-fluid">
@@ -23,27 +27,25 @@ export const Navbar = () => {
 				</Link>
 
 				<div className="dropdown">
-					<button
-						style={{ color: "rgb(121, 104, 9)", backgroundColor: "white" }}
-						className="btn btn-primary dropdown-toggle"
-						type="button"
-						id="dropdownMenuButton"
-						data-toggle="dropdown"
-						aria-haspopup="true"
-						aria-expanded="false">
-						Favoritos <i className="fas fa-eye" />
-					</button>
-					<div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-						<a className="dropdown-item" href="#">
-							Action
-						</a>
-						<a className="dropdown-item" href="#">
-							Another action
-						</a>
-						<a className="dropdown-item" href="#">
-							Something else here
-						</a>
-					</div>
+					<Dropdown>
+						<Dropdown.Toggle variant="info" id="dropdown-basic">
+							Favoritos <i className="fas fa-eye" />
+						</Dropdown.Toggle>
+						<Dropdown.Menu>
+							{store.favoritos.map((items, i) => {
+								return (
+									<Dropdown.Item key={i}>
+										{items.name} {"    "}
+										<i
+											className="fas fa-times"
+											style={{ color: "red" }}
+											onClick={() => actions.Delete(i)}
+										/>
+									</Dropdown.Item>
+								);
+							})}
+						</Dropdown.Menu>
+					</Dropdown>
 				</div>
 			</div>
 		</nav>
