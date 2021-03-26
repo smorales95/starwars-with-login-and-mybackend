@@ -7,6 +7,7 @@ import { Context } from "../store/appContext";
 
 export const Card = props => {
 	const { store, actions } = useContext(Context);
+
 	return (
 		<div>
 			<div
@@ -20,12 +21,13 @@ export const Card = props => {
 						{props.gender}
 						<br />
 						Hair color:
+						{props.hair}
 						<br />
-						Hair color: {props.eye}
-						<br />
+						Eyes color:
+						{props.eye}
 					</p>
 
-					<Link to={"/peoplesprofile/" + props.uid}>
+					<Link to={"/peoplesprofile/" + props.index}>
 						<button
 							className="btn btn-primary pos1"
 							style={{ color: "rgb(121, 104, 9)", backgroundColor: "white", border: "none" }}>
@@ -36,7 +38,7 @@ export const Card = props => {
 					<div className="pos2">
 						<i
 							className="fa fa-heart"
-							onClick={() => actions.Favorite(props.uid, props.title, props.url)}
+							onClick={() => actions.Favorite(props.index, props.title, props.url)}
 						/>
 					</div>
 				</div>
@@ -51,5 +53,6 @@ Card.propTypes = {
 	hair: PropTypes.string,
 	eye: PropTypes.string,
 	uid: PropTypes.string,
-	url: PropTypes.string
+	url: PropTypes.string,
+	index: PropTypes.numbre
 };

@@ -3,6 +3,9 @@ import { Context } from "../store/appContext";
 import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.scss";
 import { Card } from "../component/card";
+import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from "reactstrap";
+import "bootstrap/dist/css/bootstrap.css";
+
 import { PlanetsCard } from "../component/planetsCard";
 
 export const Home = () => {
@@ -11,7 +14,6 @@ export const Home = () => {
 	useEffect(() => {
 		actions.getPlanets();
 		actions.getPeoples();
-		actions.Favorite();
 	}, []);
 
 	return (
@@ -21,13 +23,17 @@ export const Home = () => {
 				<div className="row text-center">
 					<div className="col" style={{ margin: "3rem 1rem 1rem 1rem" }}>
 						{store.peoples.map((items, i) => {
-							//actions.getInfPeoples1(items.uid);
+							//actions.getInfPeoples(i + 1);
 							return (
 								<div key={i} style={{ marginRight: "10px" }}>
 									<Card
 										title={items.name}
+										gender={items.gender}
+										hair={items.hair_color}
+										index={i + 1}
+										eye={items.eye_color}
 										url={items.url}
-										uid={items.uid}
+
 										//gender={store.people1.gender}
 										//hair={store.people1.hair_color}
 										//eye={store.people1.eye_color}
@@ -50,7 +56,8 @@ export const Home = () => {
 										UrlImage={items.UrlImage}
 										name={items.name}
 										terrain={items.terrain}
-										uid={items.uid}
+										population={items.population}
+										index={i + 1}
 									/>
 								</div>
 							);

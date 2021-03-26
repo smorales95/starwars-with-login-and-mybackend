@@ -21,9 +21,6 @@ export const Peoplesprofile = props => {
 	//	let nuevaCadena = peg.replace(patron, "");
 	//	console.log(nuevaCadena);
 
-	let link = "../../img/" + store.detalle.name + ".jpg";
-
-	console.log(link);
 	return (
 		<div className="container-fluid">
 			<div className="jumbotron top1">

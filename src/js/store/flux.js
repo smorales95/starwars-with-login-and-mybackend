@@ -4,8 +4,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 			planets: [],
 			peoples: [],
 			detalle: [],
+
 			inf: [],
-			favoritos: [{ uid: "1", name: "Luke Skywalker", url: "https://www.swapi.tech/api/people/1" }],
+			favoritos: [],
 			people1: []
 		},
 		actions: {
@@ -13,7 +14,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			getPlanets: async () => {
 				const store = getStore();
-				fetch("https://www.swapi.tech/api/planets/")
+				fetch("https://swapi.dev/api/planets/")
 					.then(response => response.json())
 					.then(data => {
 						setStore({ planets: data.results });
@@ -22,7 +23,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			getPeoples: async () => {
 				const store = getStore();
-				fetch("https://www.swapi.tech/api/people/")
+				fetch("https://swapi.dev/api/people/")
 					.then(response => response.json())
 					.then(data => {
 						setStore({ peoples: data.results });
@@ -32,50 +33,27 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.catch(error => console.log("error", error));
 			},
 
-			getInfPeoples1: async id => {
-				const store = getStore();
-
-				fetch("https://www.swapi.tech/api/people/" + id)
-					.then(response => response.json())
-					.then(data => {
-						setStore({ people1: people1 + data.result.properties });
-						//setStore({ favoritos: data.result.properties });
-					})
-					.catch(error => console.log("error", error));
-			},
-
 			getInfPeoples: async id => {
 				const store = getStore();
 
 				fetch("https://www.swapi.tech/api/people/" + id)
 					.then(response => response.json())
 					.then(data => {
+						//	setStore({ detalle: data.result });
 						setStore({ detalle: data.result.properties });
-						//setStore({ favoritos: data.result.properties });
 					})
-					.catch(error => console.log("error", error));
-			},
+					.catch(result => console.log("error", result));
 
-			getInfP: id => {
-				const store = getStore();
-				console.log(id);
-
-				fetch("https://www.swapi.tech/api/people/" + id)
-					.then(response => response.json())
-					.then(data => {
-						setStore({ inf: data.result.properties });
-						console.log(inf);
-						//setStore({ favoritos: data.result.properties });
-					})
-					.catch(error => console.log("error", error));
+				console.log(store.detalle);
 			},
 
 			getInfPlanets: id => {
 				const store = getStore();
 				console.log(id);
-				fetch("https://www.swapi.tech/api/planets/" + id)
+				fetch("www.swapi.tech/api/planets/" + id)
 					.then(response => response.json())
-					.then(data => {
+					.then(result => {
+						// setStore({ detalle: result });
 						setStore({ detalle: data.result.properties });
 						//setStore({ favoritos: data.result.properties });
 					})
@@ -86,18 +64,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const store = getStore();
 				let demo;
 
-				if (store.favoritos.length == 0) {
-					setStore({ favoritos: { id: id, name: name, url: url } });
+				if (store.favoritos.length <= 0) {
+					setStore({ favoritos: [{ id: id, name: name, url: url }] });
 				} else {
-					setStore({ favoritos: store.favoritos + { id: id, name: name, url: url } });
+					setStore({ favoritos: [...store.favoritos, { id: id, name: name, url: url }] });
 				}
+				console.log(store.favoritos);
 			},
 
-			ViewFav: () => {
-				const store = getStore();
-
-				return store.favoritos;
-			},
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},

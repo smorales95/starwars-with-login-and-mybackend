@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 export const PlanetsCard = props => {
-	console.log("planets");
+	const { store, actions } = useContext(Context);
 
 	return (
 		<div>
@@ -19,14 +19,14 @@ export const PlanetsCard = props => {
 					<h5 className="card-title">{props.name}</h5>
 					<p className="card-text margen">
 						Population:
-						{props.terrain}
+						{props.population}
 						<br />
 						Terran:
 						{props.terrain}
 						<br />
 						<br />
 					</p>
-					<Link to={"/planetsprofile/" + props.uid}>
+					<Link to={"/planetsprofile/" + props.index}>
 						<button
 							className="btn btn-primary pos1"
 							style={{ color: "rgb(121, 104, 9)", backgroundColor: "white", border: "none" }}>
@@ -34,7 +34,10 @@ export const PlanetsCard = props => {
 						</button>
 					</Link>
 					<div className="pos2">
-						<i className="fa fa-heart" onClick={() => actions.Favorite(props.uid, props.name, props.url)} />
+						<i
+							className="fa fa-heart"
+							onClick={() => actions.Favorite(props.index, props.name, props.url)}
+						/>
 					</div>
 				</div>
 			</div>
@@ -43,9 +46,9 @@ export const PlanetsCard = props => {
 };
 
 PlanetsCard.propTypes = {
-	//population: PropTypes.string,
+	population: PropTypes.string,
 	terrain: PropTypes.string,
 	name: PropTypes.string,
 	url: PropTypes.string,
-	uid: PropTypes.number
+	index: PropTypes.number
 };

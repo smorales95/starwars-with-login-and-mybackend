@@ -61,7 +61,7 @@ export const Planetsprofile = props => {
 						<p className="asize">
 							Orbital Period:
 							<br />
-							{store.detalle.orbital_period}
+							{store.orbital_period}
 						</p>
 					</div>
 					<div className="col-2">

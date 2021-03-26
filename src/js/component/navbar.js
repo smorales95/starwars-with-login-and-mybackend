@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../../styles/home.scss";
+import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.css";
 import rigoImage from "../../img/starr.jpg";
 
