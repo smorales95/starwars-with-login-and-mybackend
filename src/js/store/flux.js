@@ -49,11 +49,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 				//console.log(store.favoritos);
 			},
 
-			//Funcion para eliminar los favoritos en el nvbar
+			//Funcion para eliminar los favoritos en el navbar
 			Delete: i => {
 				//get the store
 				const store = getStore();
-				//elimina el valor de acierdo al index que se le envie
+				//elimina el valor de acuerdo al index que se le envie
 				store.favoritos.splice(i, 1);
 				//sobre escribe el nuevo valor
 				setStore({ favoritos: store.favoritos });
