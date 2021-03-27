@@ -11,19 +11,16 @@ export const Card = props => {
 	return (
 		<div
 			className="card"
-			style={{ color: "white", width: "15rem", height: "20rem", backgroundColor: "rgb(121, 104, 9)" }}>
-			<img className="card-img-top" src={rigoImage} alt="Card image cap" height="125" />
+			style={{ color: "white", width: "14rem", height: "20rem", backgroundColor: "rgb(121, 104, 9)" }}>
+			<img className="card-img-top" src={rigoImage} alt="Card image cap" height="145" />
 			<div className="card-body">
 				<h5 className="card-title">{props.title}</h5>
 				<p className="card-text ">
-					Gender:
-					{props.gender}
+					Gender: {props.gender}
 					<br />
-					Hair color:
-					<div>{props.hair}</div>
+					Hair color: {props.hair}
 					<br />
-					Eyes color:
-					{props.eye}
+					Eyes color: {props.eye}
 				</p>
 			</div>
 			<div className="card-footer justify-content-center text-center">
