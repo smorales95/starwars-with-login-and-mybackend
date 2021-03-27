@@ -10,7 +10,7 @@ export const Card = props => {
 
 	return (
 		<div
-			className="card collapse"
+			className="card"
 			style={{ color: "white", width: "15rem", height: "20rem", backgroundColor: "rgb(121, 104, 9)" }}>
 			<img className="card-img-top" src={rigoImage} alt="Card image cap" height="125" />
 			<div className="card-body">
@@ -30,7 +30,11 @@ export const Card = props => {
 				<Link to={"/peoplesprofile/" + props.index}>
 					<button
 						className="btn btn-primary pos1"
-						style={{ color: "rgb(121, 104, 9)", backgroundColor: "white", border: "none" }}>
+						style={{
+							color: "rgb(121, 104, 9)",
+							backgroundColor: "white",
+							border: "none"
+						}}>
 						Learn More
 					</button>
 				</Link>
