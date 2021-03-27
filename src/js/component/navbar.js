@@ -28,7 +28,15 @@ export const Navbar = props => {
 
 				<div className="dropdown">
 					<Dropdown>
-						<Dropdown.Toggle variant="info" id="dropdown-basic">
+						<Dropdown.Toggle
+							variant="info"
+							id="dropdown-basic"
+							style={{
+								color: "rgb(121, 104, 9)",
+								backgroundColor: "white",
+								border: "none",
+								borderColor: "rgb(121, 104, 9)"
+							}}>
 							Favoritos <i className="fas fa-eye" />
 						</Dropdown.Toggle>
 						<Dropdown.Menu>
@@ -38,7 +46,7 @@ export const Navbar = props => {
 										{items.name} {"    "}
 										<i
 											className="fas fa-times"
-											style={{ color: "red" }}
+											style={{ color: "rgb(121, 104, 9)" }}
 											onClick={() => actions.Delete(i)}
 										/>
 									</Dropdown.Item>

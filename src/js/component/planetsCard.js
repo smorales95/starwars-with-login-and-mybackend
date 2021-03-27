@@ -21,7 +21,7 @@ export const PlanetsCard = props => {
 					{props.population}
 					<br />
 					Terran:
-					<span>{props.terrain}</span>
+					{props.terrain}
 				</p>
 			</div>
 			<div className="card-footer justify-content-center text-center">
