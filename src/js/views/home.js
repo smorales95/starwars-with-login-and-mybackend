@@ -23,7 +23,6 @@ export const Home = () => {
 				<div className="row text-center">
 					<div className="col" style={{ margin: "3rem 1rem 1rem 1rem" }}>
 						{store.peoples.map((items, i) => {
-							//actions.getInfPeoples(i + 1);
 							return (
 								<div key={i} style={{ marginRight: "10px" }}>
 									<Card
@@ -33,11 +32,6 @@ export const Home = () => {
 										index={i + 1}
 										eye={items.eye_color}
 										url={items.url}
-
-										//gender={store.people1.gender}
-										//hair={store.people1.hair_color}
-										//eye={store.people1.eye_color}
-										//	gender={store.inf.gender}
 									/>
 								</div>
 							);

@@ -25,7 +25,9 @@ export const Peoplesprofile = props => {
 									/>
 								</div>
 								<div className="col">
-									<h1 className="display-4">Personaje: {items.name}</h1>
+									<div>
+										<h1 className="display-4">Personaje: {items.name}</h1>
+									</div>
 
 									<p style={{ textAlign: "justify" }}>Es un Personaje de Start Wars</p>
 								</div>
