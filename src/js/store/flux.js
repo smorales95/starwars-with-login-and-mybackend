@@ -38,15 +38,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 			//Agregar a un array de favoritos cuando el usuario le de click al corazón
 			Favorite: (id, name, url) => {
 				const store = getStore();
-				//forma para agregar si esta vacido el array
-				if (store.favoritos.length <= 0) {
-					setStore({ favoritos: [{ id: id, name: name, url: url }] });
+				//forma para agregar en el array de favoritos
 
-					//forma para agregar si tiene valor el array
-				} else {
-					setStore({ favoritos: [...store.favoritos, { id: id, name: name, url: url }] });
-				}
-				//console.log(store.favoritos);
+				setStore({ favoritos: [...store.favoritos, { id: id, name: name, url: url }] });
 			},
 
 			//Funcion para eliminar los favoritos en el navbar
