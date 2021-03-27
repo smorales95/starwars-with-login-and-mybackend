@@ -3,6 +3,7 @@ div.scrollmenu {
   overflow: auto;
   white-space: nowrap;
    margin-bottom: -20px !important;
+   word-wrap: break-word;
   
   
   
@@ -11,13 +12,15 @@ div.scrollmenu {
 div.scrollmenu div {
   display: inline-block;
   //color: white;
-  text-align: center;
+  text-align: justify !important;
   text-decoration: none;
   color: white !important;
+  word-wrap: break-word;
  
 }
 .card{
     display: flex !important;
+    word-wrap: break-word !important;
 }
 
 .margen{
@@ -45,10 +48,14 @@ div.scrollmenu div {
 }
 
 .jumbotron p{
-    font-size: 22px;
+    font-size: 25px;
     font-family: Arial, Helvetica, sans-serif;
 }
-
+.card p{
+    font-size: 15px;
+    word-wrap: break-word;
+    
+}
 .jumbotron h1{
     
     font-family: cursive;
@@ -56,6 +63,9 @@ div.scrollmenu div {
      border-bottom: 5px solid rgb(121, 104, 9);
     
 
+}
+.card h5{
+    text-align: center;
 }
 
 .top1{
@@ -104,4 +114,8 @@ font-family: cursive;
 i:hover{
 color: red
 
+}
+
+.ali{
+    word-wrap: break-word;
 }

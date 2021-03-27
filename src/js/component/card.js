@@ -11,7 +11,7 @@ export const Card = props => {
 	return (
 		<div>
 			<div
-				className="card "
+				className="card"
 				style={{ color: "white", width: "15rem", height: "20rem", backgroundColor: "rgb(121, 104, 9)" }}>
 				<img className="card-img-top" src={rigoImage} alt="Card image cap" height="125" />
 				<div className="card-body">
@@ -21,7 +21,7 @@ export const Card = props => {
 						{props.gender}
 						<br />
 						Hair color:
-						{props.hair}
+						<div>{props.hair}</div>
 						<br />
 						Eyes color:
 						{props.eye}

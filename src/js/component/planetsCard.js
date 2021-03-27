@@ -22,7 +22,7 @@ export const PlanetsCard = props => {
 						{props.population}
 						<br />
 						Terran:
-						{props.terrain}
+						<div className="ali">{props.terrain}</div>
 						<br />
 						<br />
 					</p>
