@@ -10,6 +10,7 @@ import { Context } from "../store/appContext";
 
 export const Navbar = props => {
 	const { store, actions } = useContext(Context);
+	let contador = store.favoritos.length;
 	return (
 		<nav className="navbar">
 			<div className="container-fluid">
@@ -34,9 +35,10 @@ export const Navbar = props => {
 							color: "rgb(121, 104, 9)",
 							backgroundColor: "white",
 							border: "none",
-							borderColor: "rgb(121, 104, 9)"
+							borderColor: "rgb(121, 104, 9)",
+							outline: "none !important"
 						}}>
-						Favoritos <i className="fas fa-eye" />
+						Favoritos <div className="cont">{contador}</div>
 					</Dropdown.Toggle>
 					<Dropdown.Menu>
 						{store.favoritos.map((items, i) => {
