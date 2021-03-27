@@ -26,35 +26,33 @@ export const Navbar = props => {
 					</a>
 				</Link>
 
-				<div className="dropdown">
-					<Dropdown>
-						<Dropdown.Toggle
-							variant="info"
-							id="dropdown-basic"
-							style={{
-								color: "rgb(121, 104, 9)",
-								backgroundColor: "white",
-								border: "none",
-								borderColor: "rgb(121, 104, 9)"
-							}}>
-							Favoritos <i className="fas fa-eye" />
-						</Dropdown.Toggle>
-						<Dropdown.Menu>
-							{store.favoritos.map((items, i) => {
-								return (
-									<Dropdown.Item key={i}>
-										{items.name} {"    "}
-										<i
-											className="fas fa-times"
-											style={{ color: "rgb(121, 104, 9)" }}
-											onClick={() => actions.Delete(i)}
-										/>
-									</Dropdown.Item>
-								);
-							})}
-						</Dropdown.Menu>
-					</Dropdown>
-				</div>
+				<Dropdown>
+					<Dropdown.Toggle
+						variant="info"
+						id="dropdown-basic"
+						style={{
+							color: "rgb(121, 104, 9)",
+							backgroundColor: "white",
+							border: "none",
+							borderColor: "rgb(121, 104, 9)"
+						}}>
+						Favoritos <i className="fas fa-eye" />
+					</Dropdown.Toggle>
+					<Dropdown.Menu>
+						{store.favoritos.map((items, i) => {
+							return (
+								<Dropdown.Item key={i}>
+									{items.name} {"    "}
+									<i
+										className="fas fa-times"
+										style={{ color: "rgb(121, 104, 9)" }}
+										onClick={() => actions.Delete(i)}
+									/>
+								</Dropdown.Item>
+							);
+						})}
+					</Dropdown.Menu>
+				</Dropdown>
 			</div>
 		</nav>
 	);
