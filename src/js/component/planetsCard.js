@@ -17,7 +17,7 @@ export const PlanetsCard = props => {
 				<img className="card-img-top" src={rigoImage} alt="Card image cap" height="125" />
 				<div className="card-body">
 					<h5 className="card-title">{props.name}</h5>
-					<p className="card-text margen">
+					<p className="card-text margen" style={{ textAlign: "justify !important" }}>
 						Population:
 						{props.population}
 						<br />
