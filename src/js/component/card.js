@@ -9,38 +9,34 @@ export const Card = props => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<div>
-			<div
-				className="card"
-				style={{ color: "white", width: "15rem", height: "20rem", backgroundColor: "rgb(121, 104, 9)" }}>
-				<img className="card-img-top" src={rigoImage} alt="Card image cap" height="125" />
-				<div className="card-body">
-					<h5 className="card-title">{props.title}</h5>
-					<p className="card-text margen">
-						Gender:
-						{props.gender}
-						<br />
-						Hair color:
-						<div>{props.hair}</div>
-						<br />
-						Eyes color:
-						{props.eye}
-					</p>
+		<div
+			className="card collapse"
+			style={{ color: "white", width: "15rem", height: "20rem", backgroundColor: "rgb(121, 104, 9)" }}>
+			<img className="card-img-top" src={rigoImage} alt="Card image cap" height="125" />
+			<div className="card-body">
+				<h5 className="card-title">{props.title}</h5>
+				<p className="card-text ">
+					Gender:
+					{props.gender}
+					<br />
+					Hair color:
+					<div>{props.hair}</div>
+					<br />
+					Eyes color:
+					{props.eye}
+				</p>
+			</div>
+			<div className="card-footer justify-content-center text-center">
+				<Link to={"/peoplesprofile/" + props.index}>
+					<button
+						className="btn btn-primary pos1"
+						style={{ color: "rgb(121, 104, 9)", backgroundColor: "white", border: "none" }}>
+						Learn More
+					</button>
+				</Link>
 
-					<Link to={"/peoplesprofile/" + props.index}>
-						<button
-							className="btn btn-primary pos1"
-							style={{ color: "rgb(121, 104, 9)", backgroundColor: "white", border: "none" }}>
-							Learn More
-						</button>
-					</Link>
-
-					<div className="pos2">
-						<i
-							className="fa fa-heart"
-							onClick={() => actions.Favorite(props.index, props.title, props.url)}
-						/>
-					</div>
+				<div className="pos2">
+					<i className="fa fa-heart" onClick={() => actions.Favorite(props.index, props.title, props.url)} />
 				</div>
 			</div>
 		</div>
