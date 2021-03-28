@@ -13,7 +13,7 @@ export const PlanetsCard = props => {
 			className="card "
 			style={{ color: "white", width: "14rem", height: "20rem", backgroundColor: "rgb(121, 104, 9)" }}>
 			{" "}
-			<img className="card-img-top" src={rigoImage} alt="Card image cap" height="145" />
+			<img className="card-img-top" src={props.urlImg} alt="Card image cap" height="145" />
 			<div className="card-body">
 				<h5 className="card-title">{props.name}</h5>
 				<p className="card-text justify" style={{ textAlign: "justify !important" }}>
@@ -45,5 +45,6 @@ PlanetsCard.propTypes = {
 	terrain: PropTypes.string,
 	name: PropTypes.string,
 	url: PropTypes.string,
-	index: PropTypes.number
+	index: PropTypes.number,
+	urlImg: PropTypes.string
 };

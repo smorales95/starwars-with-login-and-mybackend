@@ -71,8 +71,9 @@ div.scrollmenu div {
 
 .top1{
     
-    margin-top:35px;
-    margin-bottom: auto;
+    margin-top:25px;
+    margin-bottom:25px;
+    
     background-color: white;
 }
 
@@ -93,7 +94,7 @@ background-color: rgb(121, 104, 9);
     margin-top: -25px !important;
     margin-bottom: 25px !important;
 }
-.pers{
+.Titlepers{
 margin-top: 20px;
 color: White;
 margin-bottom: 10px !important;
@@ -101,7 +102,7 @@ font-family: cursive;
    font-weight: bold;
 }
 
-.plane{
+.Titleplane{
     margin-top: 50px !important;
     color: White;
     margin-bottom: -10px !important;
@@ -148,6 +149,7 @@ font-weight: bold;
 .row span{
     font-weight: bold;
     font-size: 17px;
+    margin-bottom: -60px;
 }   
 .dropdown button {
   outline: none !important;

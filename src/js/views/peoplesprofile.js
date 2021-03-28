@@ -17,7 +17,7 @@ export const Peoplesprofile = props => {
 							<div className="row">
 								<div className="col-3">
 									<img
-										src={rigoImage}
+										src={store.img[i]}
 										className=""
 										alt="Responsive image"
 										width="290px"
@@ -29,7 +29,7 @@ export const Peoplesprofile = props => {
 										<h1 className="display-4">Personaje: {items.name}</h1>
 									</div>
 
-									<p style={{ textAlign: "justify" }}>Es un Personaje de Start Wars</p>
+									<p style={{ textAlign: "justify" }}>{store.detalle[i]}</p>
 								</div>
 							</div>
 							<div
@@ -82,9 +82,8 @@ export const Peoplesprofile = props => {
 							<div className="row">
 								<Link to="/">
 									<span
-										className="btn btn-primary btn-lg pos1"
+										className="btn btn-primary btn-lg"
 										style={{ color: "white", backgroundColor: "rgb(121, 104, 9)", border: "none" }}
-										href="#"
 										role="button">
 										Back home
 									</span>

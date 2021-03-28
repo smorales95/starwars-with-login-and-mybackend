@@ -18,7 +18,7 @@ export const Home = () => {
 
 	return (
 		<div className="container-fluid ">
-			<h1 className="pers">Personajes</h1>
+			<h1 className="Titlepers">Personajes</h1>
 			<div className="scrollmenu scro1">
 				<div className="row text-center">
 					<div className="col" style={{ margin: "3rem 1rem 1rem 1rem" }}>
@@ -32,6 +32,7 @@ export const Home = () => {
 										index={i + 1}
 										eye={items.eye_color}
 										url={items.url}
+										urlImg={store.img[i]}
 									/>
 								</div>
 							);
@@ -39,7 +40,7 @@ export const Home = () => {
 					</div>
 				</div>
 			</div>
-			<h1 className="plane">Planetas</h1>
+			<h1 className="Titleplane">Planetas</h1>
 			<div className="scrollmenu scro">
 				<div className="row text-center">
 					<div className="col" style={{ margin: "3rem 1rem 1rem 1rem" }}>
@@ -52,6 +53,7 @@ export const Home = () => {
 										terrain={items.terrain}
 										population={items.population}
 										index={i + 1}
+										urlImg={store.imgP[i]}
 									/>
 								</div>
 							);
