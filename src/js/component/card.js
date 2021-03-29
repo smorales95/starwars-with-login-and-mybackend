@@ -11,7 +11,13 @@ export const Card = props => {
 	return (
 		<div
 			className="card"
-			style={{ color: "white", width: "14rem", height: "20rem", backgroundColor: "rgb(121, 104, 9)" }}>
+			style={{
+				color: "white",
+				width: "14rem",
+				height: "20rem",
+				backgroundColor: "Transparent",
+				borderColor: "white"
+			}}>
 			<img className="card-img-top" src={props.urlImg} alt="Card image cap" height="145" />
 			<div className="card-body">
 				<h5 className="card-title">{props.title}</h5>

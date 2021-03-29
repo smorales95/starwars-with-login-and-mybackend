@@ -13,7 +13,7 @@ export const Peoplesprofile = props => {
 			{store.peoples.map((items, i) => {
 				if (i + 1 == params.theid) {
 					return (
-						<div className="jumbotron top1">
+						<div className="jumbotron top1" style={{ backgroundColor: "transparent" }}>
 							<div className="row">
 								<div className="col-3">
 									<img
@@ -26,10 +26,12 @@ export const Peoplesprofile = props => {
 								</div>
 								<div className="col">
 									<div>
-										<h1 className="display-4">Personaje: {items.name}</h1>
+										<h1 className="display-4" style={{ color: "white" }}>
+											Personaje: {items.name}
+										</h1>
 									</div>
 
-									<p style={{ textAlign: "justify" }}>{store.detalle[i]}</p>
+									<p style={{ textAlign: "justify", color: "white" }}>{store.descripPers[i]}</p>
 								</div>
 							</div>
 							<div

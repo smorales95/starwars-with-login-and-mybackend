@@ -11,17 +11,21 @@ export const PlanetsCard = props => {
 	return (
 		<div
 			className="card "
-			style={{ color: "white", width: "14rem", height: "20rem", backgroundColor: "rgb(121, 104, 9)" }}>
+			style={{
+				color: "white",
+				width: "14rem",
+				height: "20rem",
+				backgroundColor: "Transparent",
+				borderColor: "white"
+			}}>
 			{" "}
 			<img className="card-img-top" src={props.urlImg} alt="Card image cap" height="145" />
 			<div className="card-body">
 				<h5 className="card-title">{props.name}</h5>
 				<p className="card-text justify" style={{ textAlign: "justify !important" }}>
-					Population:
-					{props.population}
+					Population: {props.population}
 					<br />
-					Terran:
-					{props.terrain}
+					Terran: {props.terrain}
 				</p>
 			</div>
 			<div className="card-footer justify-content-center text-center">

@@ -13,7 +13,7 @@ export const Planetsprofile = props => {
 			{store.planets.map((items, i) => {
 				if (i + 1 == params.theid) {
 					return (
-						<div className="jumbotron top1">
+						<div className="jumbotron top1" style={{ backgroundColor: "transparent" }}>
 							<div className="row">
 								<div className="col-3">
 									<img
@@ -25,9 +25,11 @@ export const Planetsprofile = props => {
 									/>
 								</div>
 								<div className="col">
-									<h1 className="display-4">Planeta: {items.name}</h1>
+									<h1 className="display-4" style={{ color: "white" }}>
+										Planeta: {items.name}
+									</h1>
 
-									<p style={{ textAlign: "justify" }}>Es un Planeta de Start Wars</p>
+									<p style={{ textAlign: "justify", color: "white" }}>{store.descripPlane[i]}</p>
 								</div>
 							</div>
 							<div

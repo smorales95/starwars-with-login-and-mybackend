@@ -1,20 +1,21 @@
-div.scrollmenu {
+.scrollmenu {
 
   overflow: auto;
   white-space: nowrap;
    margin-bottom: -20px !important;
    word-wrap: break-word;
+    
   
   
   
 }
 
-div.scrollmenu div {
+.scrollmenu div {
   display: inline-block;
-  //color: white;
+ 
   text-align: justify !important;
   text-decoration: none;
-  color: white !important;
+ 
   word-wrap: break-word;
  
 }
@@ -44,6 +45,7 @@ div.scrollmenu div {
 .asize{
     font-size: 18px !important;
     color:rgb(121, 104, 9);
+    font-weight: bold;
     
 }
 
@@ -129,9 +131,9 @@ color: red !important
 }
 
 .card-footer{
-border-color: none !important;
-border: none;
-background-color: rgb(121, 104, 9);
+border-color: white !important;
+border-top: none;
+background-color: Transparent;
 font-size: 10px !important;
 }
 
