@@ -8,6 +8,7 @@ import { Single } from "./views/single";
 import { Planetsprofile } from "./views/planetsprofile";
 import { Peoplesprofile } from "./views/peoplesprofile";
 import injectContext from "./store/appContext";
+import ReactAudioPlayer from "react-audio-player";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";

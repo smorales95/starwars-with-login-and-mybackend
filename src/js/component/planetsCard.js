@@ -25,7 +25,10 @@ export const PlanetsCard = props => {
 				<p className="card-text justify" style={{ textAlign: "justify !important" }}>
 					Population: {props.population}
 					<br />
-					Terran: {props.terrain}
+					Terran:{" "}
+					<div className="textcard" style={{ textAlign: "justify !important" }}>
+						{props.terrain}
+					</div>
 				</p>
 			</div>
 			<div className="card-footer justify-content-center text-center">

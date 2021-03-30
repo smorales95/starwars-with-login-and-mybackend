@@ -5,6 +5,7 @@ import "../../styles/home.scss";
 import { Card } from "../component/card";
 import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.css";
+import ReactAudioPlayer from "react-audio-player";
 
 import { PlanetsCard } from "../component/planetsCard";
 
@@ -17,14 +18,14 @@ export const Home = () => {
 	}, []);
 
 	return (
-		<div className="container-fluid ">
+		<div className="container-fluid">
 			<h1 className="Titlepers">Personajes</h1>
 			<div className="scrollmenu scro1">
 				<div className="row text-center">
-					<div className="col" style={{ margin: "3rem 1rem 1rem 1rem" }}>
+					<div className="col" style={{ margin: "3rem 1rem 1.2rem 1rem" }}>
 						{store.peoples.map((items, i) => {
 							return (
-								<div key={i} style={{ marginRight: "10px" }}>
+								<div key={i} style={{ marginRight: "7px", marginLeft: "7px" }}>
 									<Card
 										title={items.name}
 										gender={items.gender}
@@ -43,10 +44,10 @@ export const Home = () => {
 			<h1 className="Titleplane">Planetas</h1>
 			<div className="scrollmenu scro">
 				<div className="row text-center">
-					<div className="col" style={{ margin: "3rem 1rem 1rem 1rem" }}>
+					<div className="col" style={{ margin: "3rem 1rem 1.2rem 1rem" }}>
 						{store.planets.map((items, i) => {
 							return (
-								<div key={i} style={{ marginRight: "10px" }}>
+								<div key={i} style={{ marginRight: "7px", marginLeft: "7px" }}>
 									<PlanetsCard
 										UrlImage={items.UrlImage}
 										name={items.name}
