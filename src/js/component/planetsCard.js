@@ -18,18 +18,15 @@ export const PlanetsCard = props => {
 				backgroundColor: "Transparent",
 				borderColor: "white"
 			}}>
-			{" "}
 			<img className="card-img-top" src={props.urlImg} alt="Card image cap" height="145" />
 			<div className="card-body">
 				<h5 className="card-title">{props.name}</h5>
-				<p className="card-text justify" style={{ textAlign: "justify !important" }}>
+				<p className="card-text" style={{ textAlign: "justify" }}>
 					Population: {props.population}
-					<br />
-					Terran:{" "}
-					<div className="textcard" style={{ textAlign: "justify !important" }}>
-						{props.terrain}
-					</div>
 				</p>
+				<div className="textcard">
+					<p>Terran: {props.terrain}</p>
+				</div>
 			</div>
 			<div className="card-footer justify-content-center text-center">
 				<Link to={"/planetsprofile/" + props.index}>

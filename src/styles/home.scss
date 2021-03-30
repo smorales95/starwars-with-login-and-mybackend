@@ -3,7 +3,7 @@
   overflow: auto;
   white-space: nowrap;
    margin-bottom: -20px !important;
-   word-wrap: break-word;
+    word-wrap: break-word !important;
     
   
   
@@ -13,10 +13,11 @@
 .scrollmenu div {
   display: inline-block;
  
-  text-align: justify !important;
+  //text-align: justify !important;
   text-decoration: none;
+   word-wrap: break-word !important;
  
-  word-wrap: break-word;
+
  
 }
 .card{
@@ -181,10 +182,10 @@ font-weight: bold;
 
 }
 .textcard{
-    width: 120px !important;
-    height: 150px !important;
-    display: inline-block !important;
-    text-align: justify !important;
+  
+  width: 180px;
+  word-wrap:break-word !important;
+  height: 50px;
 }
 
 body{
