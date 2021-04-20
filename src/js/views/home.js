@@ -3,7 +3,6 @@ import { Context } from "../store/appContext";
 import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.scss";
 import { Card } from "../component/card";
-import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.css";
 import ReactAudioPlayer from "react-audio-player";
 

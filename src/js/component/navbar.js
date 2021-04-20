@@ -27,6 +27,10 @@ export const Navbar = props => {
 					</a>
 				</Link>
 
+				<Link to="/login">
+					<a className="navbar-brand">Login</a>
+				</Link>
+
 				<Dropdown>
 					<Dropdown.Toggle
 						variant="info"

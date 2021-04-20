@@ -12,6 +12,8 @@ import ReactAudioPlayer from "react-audio-player";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+import { Login } from "./component/login";
+import { Signup } from "./component/signup";
 
 //create your first component
 const Layout = () => {
@@ -28,8 +30,11 @@ const Layout = () => {
 						<Route exact path="/">
 							<Home />
 						</Route>
-						<Route exact path="/demo">
-							<Demo />
+						<Route exact path="/login">
+							<Login />
+						</Route>
+						<Route exact path="/signup">
+							<Signup />
 						</Route>
 						<Route exact path="/single/:theid">
 							<Single />
