@@ -7,10 +7,11 @@ import { Context } from "../store/appContext";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
 import { propTypes } from "react-bootstrap/esm/Image";
+import { Redirect } from "react-router-dom";
 
 export const Signup = () => {
-    const { store, actions } = useContext(Context);
-    const [email, setEmail] = useState("");
+	const { store, actions } = useContext(Context);
+	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [auth, setAuth] = useState(false);
 
@@ -63,7 +64,12 @@ export const Signup = () => {
 										<i className="fas fa-envelope" />
 									</span>
 								</div>
-								<input type="email" className="form-control" placeholder="@" onChange={e => setEmail(e.target.value)}/>
+								<input
+									type="email"
+									className="form-control"
+									placeholder="@"
+									onChange={e => setEmail(e.target.value)}
+								/>
 							</div>
 							<div className="input-group form-group">
 								<div className="input-group-prepend">
@@ -71,14 +77,21 @@ export const Signup = () => {
 										<i className="fas fa-key" />
 									</span>
 								</div>
-								<input type="password" className="form-control" placeholder="password" onChange={e => setPassword(e.target.value)}/>
+								<input
+									type="password"
+									className="form-control"
+									placeholder="password"
+									onChange={e => setPassword(e.target.value)}
+								/>
 							</div>
 
 							<div className="form-group">
-                                <button type="submit" className="btn float-right login_btn">Sign Up</button>
-								
+								<button type="submit" className="btn float-right login_btn">
+									Sign Up
+								</button>
 							</div>
-						</form>{auth ? <Redirect to="/login" /> : null}
+						</form>
+						{auth ? <Redirect to="/login" /> : null}
 					</div>
 					<div className="card-footer">
 						<div className="d-flex justify-content-center links">
@@ -94,4 +107,3 @@ export const Signup = () => {
 		</div>
 	);
 };
-

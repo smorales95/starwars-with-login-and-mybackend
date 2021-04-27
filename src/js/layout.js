@@ -12,8 +12,8 @@ import ReactAudioPlayer from "react-audio-player";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
-import { Login } from "./component/login";
-import { Signup } from "./component/signup";
+import { Login } from "./views/login";
+import { Signup } from "./views/signup";
 
 //create your first component
 const Layout = () => {

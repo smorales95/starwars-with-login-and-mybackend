@@ -5,8 +5,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			planets: [],
 			peoples: [],
-            favoritos: [],
-            isLogin:[],
+			favoritos: [],
+			isLogin: [],
 			img: [
 				"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fen%2F9%2F9b%2FLuke_Skywalker.png&f=1&nofb=1",
 				"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.nIit7LTOy8Vo_41ETzKmTgHaJQ%26pid%3DApi&f=1",
@@ -65,7 +65,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			//carga en el array de planets lo que se obtenga en el fetch
 			getPlanets: async () => {
 				const store = getStore();
-				fetch("https://swapi.dev/api/planets/")
+				fetch("https://3000-lime-pony-mlwak6ak.ws-us03.gitpod.io/planets/")
 					.then(response => response.json())
 					.then(data => {
 						setStore({ planets: data.results });
@@ -76,7 +76,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			//carga en el array de people lo que se obtenga en el fetch
 			getPeoples: async () => {
 				const store = getStore();
-				fetch("https://swapi.dev/api/people/")
+				fetch("https://3000-lime-pony-mlwak6ak.ws-us03.gitpod.io/person")
 					.then(response => response.json())
 					.then(data => {
 						setStore({ peoples: data.results });
