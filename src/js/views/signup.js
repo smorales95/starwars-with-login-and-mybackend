@@ -8,8 +8,37 @@ import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
 import { propTypes } from "react-bootstrap/esm/Image";
 
-export const Signup = props => {
-	const { store, actions } = useContext(Context);
+export const Signup = () => {
+    const { store, actions } = useContext(Context);
+    const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+	const [auth, setAuth] = useState(false);
+
+	const handleSubmit = e => {
+		e.preventDefault();
+
+		const body = {
+			email: email,
+			password: password
+		};
+
+		// fetch de REGISTER
+		fetch("https://3000-black-koala-jisgb2cv.ws-us03.gitpod.io/register", {
+			method: "POST",
+			body: JSON.stringify(body),
+			headers: {
+				"Content-Type": "application/json"
+			}
+		})
+			.then(res => res.json())
+			.then(data => {
+				console.log(data);
+				//tavo validar esta linea
+				sessionStorage.setItem("my_token", data.token);
+				// setAuth(true);
+			})
+			.catch(err => console.log(err));
+	};
 
 	return (
 		<div className="container-fluid pos">
@@ -19,7 +48,7 @@ export const Signup = props => {
 						<h3>Sign Up</h3>
 					</div>
 					<div className="card-body">
-						<form>
+						<form onSubmit={handleSubmit} style={{ width: "500px" }}>
 							<div className="input-group form-group">
 								<div className="input-group-prepend">
 									<span className="input-group-text">
@@ -34,7 +63,7 @@ export const Signup = props => {
 										<i className="fas fa-envelope" />
 									</span>
 								</div>
-								<input type="text" className="form-control" placeholder="@" />
+								<input type="email" className="form-control" placeholder="@" onChange={e => setEmail(e.target.value)}/>
 							</div>
 							<div className="input-group form-group">
 								<div className="input-group-prepend">
@@ -42,13 +71,14 @@ export const Signup = props => {
 										<i className="fas fa-key" />
 									</span>
 								</div>
-								<input type="password" className="form-control" placeholder="password" />
+								<input type="password" className="form-control" placeholder="password" onChange={e => setPassword(e.target.value)}/>
 							</div>
 
 							<div className="form-group">
-								<input type="submit" value="Login" className="btn float-right login_btn" />
+                                <button type="submit" className="btn float-right login_btn">Sign Up</button>
+								
 							</div>
-						</form>
+						</form>{auth ? <Redirect to="/login" /> : null}
 					</div>
 					<div className="card-footer">
 						<div className="d-flex justify-content-center links">
@@ -65,8 +95,3 @@ export const Signup = props => {
 	);
 };
 
-Signup.propTypes = {
-	email: PropTypes.string,
-	passw: PropTypes.string,
-	name: PropTypes.string
-};

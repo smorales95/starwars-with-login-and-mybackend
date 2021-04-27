@@ -5,7 +5,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			planets: [],
 			peoples: [],
-			favoritos: [],
+            favoritos: [],
+            isLogin:[],
 			img: [
 				"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fen%2F9%2F9b%2FLuke_Skywalker.png&f=1&nofb=1",
 				"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.nIit7LTOy8Vo_41ETzKmTgHaJQ%26pid%3DApi&f=1",
