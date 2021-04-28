@@ -65,7 +65,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			//carga en el array de planets lo que se obtenga en el fetch
 			getPlanets: async () => {
 				const store = getStore();
-				fetch("https://3000-lime-pony-mlwak6ak.ws-us03.gitpod.io/planets/")
+				fetch("https://3000-lime-pony-mlwak6ak.ws-us03.gitpod.io/planet")
 					.then(response => response.json())
 					.then(data => {
 						setStore({ planets: data.results });

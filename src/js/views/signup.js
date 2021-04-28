@@ -24,7 +24,7 @@ export const Signup = () => {
 		};
 
 		// fetch de REGISTER
-		fetch("https://3000-black-koala-jisgb2cv.ws-us03.gitpod.io/register", {
+		fetch("https://3000-lime-pony-mlwak6ak.ws-us03.gitpod.io/createUser", {
 			method: "POST",
 			body: JSON.stringify(body),
 			headers: {
