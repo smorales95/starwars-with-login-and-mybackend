@@ -8,23 +8,27 @@ import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
 import { propTypes } from "react-bootstrap/esm/Image";
 import { Redirect } from "react-router-dom";
+import swal from "sweetalert";
 
 export const Signup = () => {
 	const { store, actions } = useContext(Context);
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+	const [name, setName] = useState("");
+
 	const [auth, setAuth] = useState(false);
 
 	const handleSubmit = e => {
 		e.preventDefault();
 
 		const body = {
+			name: name,
 			email: email,
 			password: password
 		};
 
 		// fetch de REGISTER
-		fetch("https://3000-lime-pony-mlwak6ak.ws-us03.gitpod.io/createUser", {
+		fetch("https://3000-coffee-chimpanzee-8w6w3ksl.ws-us04.gitpod.io/createUser", {
 			method: "POST",
 			body: JSON.stringify(body),
 			headers: {
@@ -35,8 +39,14 @@ export const Signup = () => {
 			.then(data => {
 				console.log(data);
 				//tavo validar esta linea
-				sessionStorage.setItem("my_token", data.token);
-				// setAuth(true);
+				//sessionStorage.setItem("my_token", data.token);
+				swal({
+					title: "Correcto!",
+					text: "Se ha Registardo Exitosamente",
+					icon: "success",
+					button: "Aceptar"
+				});
+				setAuth(true);
 			})
 			.catch(err => console.log(err));
 	};
@@ -56,7 +66,12 @@ export const Signup = () => {
 										<i className="fas fa-user" />
 									</span>
 								</div>
-								<input type="text" className="form-control" placeholder="Name" />
+								<input
+									type="text"
+									className="form-control"
+									placeholder="Name"
+									onChange={e => setName(e.target.value)}
+								/>
 							</div>
 							<div className="input-group form-group">
 								<div className="input-group-prepend">

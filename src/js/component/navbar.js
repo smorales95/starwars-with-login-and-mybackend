@@ -7,10 +7,23 @@ import Dropdown from "react-bootstrap/Dropdown";
 import { propTypes } from "react-bootstrap/esm/Image";
 import { Card } from "./card";
 import { Context } from "../store/appContext";
+import { Redirect } from "react-router-dom";
 
 export const Navbar = props => {
 	const { store, actions } = useContext(Context);
+	const [islogin, setIsLogin] = useState(false);
 
+	const handleSubmit = e => {
+		setIsLogin(false);
+		store.login = false;
+		swal({
+			title: "Correcto!",
+			text: "Se ha cerrado sesion ",
+			icon: "success",
+			button: "Aceptar"
+		});
+		<Redirect to="/" />;
+	};
 	return (
 		<nav className="navbar">
 			<div className="container-fluid">
@@ -27,9 +40,17 @@ export const Navbar = props => {
 					</a>
 				</Link>
 
-				<Link to="/login">
-					<a className="navbar-brand">Login</a>
-				</Link>
+				{islogin ? (
+					<Link to="/">
+						<a className="navbar-brand" onClick={handleSubmit}>
+							Sign up
+						</a>
+					</Link>
+				) : (
+					<Link to="/login">
+						<a className="navbar-brand">Login</a>
+					</Link>
+				)}
 
 				<Dropdown>
 					<Dropdown.Toggle

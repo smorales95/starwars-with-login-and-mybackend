@@ -14,8 +14,7 @@ export const Login = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [mensaje, setmensaje] = useState("");
-	const { islogin } = store;
-	const { setLogin } = actions;
+	const [islogin, setIsLogin] = useState(false);
 
 	const handleSubmit = e => {
 		e.preventDefault();
@@ -26,7 +25,7 @@ export const Login = () => {
 		};
 		//setLogin(true);
 		// fetch de LOGIN
-		fetch("https://3000-lime-pony-mlwak6ak.ws-us03.gitpod.io/login", {
+		fetch("https://3000-coffee-chimpanzee-8w6w3ksl.ws-us04.gitpod.io/login", {
 			method: "POST",
 			body: JSON.stringify(body),
 			headers: {
@@ -36,17 +35,26 @@ export const Login = () => {
 			.then(res => res.json())
 			.then(data => {
 				console.log(data);
-
-				// añadir token a session
-				//usuario valido
-				let token = data.token;
-				console.log(token);
-				if (token) {
-					sessionStorage.setItem("my_token", data.token);
-					setLogin(true);
-					console.log(islogin);
-					setmensaje("");
-				} else setmensaje(data.msg);
+				if (data.message != "Bad user or password") {
+					store.token = data.token;
+					setIsLogin(true);
+					store.login = true;
+					swal({
+						title: "Correcto!",
+						text: "Se ha Logeado Exitosamente",
+						icon: "success",
+						button: "Aceptar"
+					});
+				} else {
+					swal({
+						title: "Incorrecto!",
+						text: "Error en Correo o Contraseña",
+						icon: "error",
+						button: "Aceptar"
+					});
+					setIsLogin(false);
+					store.login = false;
+				}
 
 				// let token = sessionStorage.getItem("my_token")
 			})
@@ -74,7 +82,6 @@ export const Login = () => {
 									placeholder="@"
 									onChange={e => {
 										setEmail(e.target.value);
-										setmensaje("");
 									}}
 								/>
 							</div>
